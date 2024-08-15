@@ -53,17 +53,14 @@ Google Gemini:
 
 ### Sitemap
 
-Login <--> Create Account
-|
-V
-Dashboard (year view) --> Edit Year
-| | |
-| | V
-| | My Resources --> Add a Resource
-| V
-| My Month
-V
-My Day
+-   Create Account
+-   Login
+-   Dashboard (Year View)
+-   Edit Year
+-   My Resources
+-   Add a Resource
+-   My Month
+-   My Day
 
 ### Mockups
 
