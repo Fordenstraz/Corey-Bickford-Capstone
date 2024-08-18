@@ -52,8 +52,9 @@ My app is meant for use by teachers (teaching in BC, Canada). It's purpose is to
 -   offers english and french holiday names
 
 [Google Gemini AI](https://ai.google.dev/gemini-api/docs)
-[!IMPORTANT]
-AI features are considered 'nice-to-have', and will be added if time permits.
+
+> [!IMPORTANT]
+> AI features are considered 'nice-to-have', and will be added if time permits.
 
 ### Sitemap
 
@@ -75,8 +76,8 @@ Each user profile will be associated with a calendar table, in a 1:1 relationshi
 
 ![Diagram showing the relationship between the 'Users' and 'Calendar_Events' tables.](./proposal-assets/db_map.png)
 
-[!IMPORTANT]
-Future versions will allow each user profile to create multiple calendars, in a 1:n relationship.
+> [!IMPORTANT]
+> Future versions will allow each user profile to create multiple calendars, in a 1:n relationship.
 
 ### Endpoints
 
