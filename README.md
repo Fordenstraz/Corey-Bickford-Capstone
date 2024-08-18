@@ -73,7 +73,7 @@ AI features are considered 'nice-to-have', and will be added if time permits.
 
 Each user profile will be associated with a calendar table, in a 1:1 relationship.
 
-![Diagram showing the relationship between the 'Users' and 'Calendar_Events' tables](./db_map.png)
+![Diagram showing the relationship between the 'Users' and 'Calendar_Events' tables.](./proposal-assets/db_map.png)
 
 [!important]
 Future versions will allow each user profile to create multiple calendars, in a 1:n relationship.
