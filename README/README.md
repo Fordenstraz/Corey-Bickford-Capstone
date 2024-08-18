@@ -31,25 +31,29 @@ My app is meant for use by teachers (teaching in BC, Canada). It's purpose is to
 
 -   React
 -   JavaScript
--   MySQL/Mongo DB
+-   MySQL
 -   Express
 -   Client libraries:
     -   react
     -   react-router
-    -   react-big-calendar or react-calendar
+    -   react-big-calendar
     -   moment
     -   axios
 -   Server libraries:
+    -   node.js
     -   express
     -   knex
 
 ### APIs
 
-API to get all Canadian statutory holidays:
-[Canadian Holidays API](https://canada-holidays.ca/api/v1/) - provides statutory holiday schedule on a Province basis - offers english and french holiday names
+[API to get all Canadian statutory holidays](https://canada-holidays.ca/api/v1/)
 
-Google Gemini:
-[Gemini AI](https://ai.google.dev/gemini-api/docs)
+-   provides statutory holiday schedule on a Province basis
+-   offers english and french holiday names
+
+[Google Gemini AI](https://ai.google.dev/gemini-api/docs)
+[!important]
+AI features are considered 'nice-to-have', and will be added if time permits.
 
 ### Sitemap
 
@@ -58,7 +62,6 @@ Google Gemini:
 -   Dashboard (Year View)
 -   Edit Year
 -   My Resources
--   Add a Resource
 -   My Month
 -   My Day
 
@@ -68,11 +71,34 @@ Google Gemini:
 
 ### Data
 
-\*Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
+Each user profile will be associated with a calendar table, in a 1:1 relationship.
+
+![Diagram showing the relationship between the 'Users' and 'Calendar_Events' tables](./db_map.png)
+
+[!important]
+Future versions will allow each user profile to create multiple calendars, in a 1:n relationship.
 
 ### Endpoints
 
-\*List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+-   POST NewUser
+
+    -   create a new user profile with name, email, and password
+
+-   GET User
+
+    -   on login get user data such as name, and email
+
+-   POST NewCalendarEvent
+
+    -   add a new calndar event
+
+-   GET CalendarEvents
+
+    -   get the list of all calendar events for a specific user
+
+-   DELETE RemoveCalendarEvent
+
+    -   remove a calendar event
 
 ### Auth
 
@@ -88,12 +114,12 @@ Sprint-1 (Aug 19th - Aug 25 )
 -   app navigation
 -   server routing
 -   Knex seeds and migrations
--   GET CalendarEvents endpoint
--   POST NewCalendarEvent endpoint
--   PUT EditCalendarEvent endpoint
 
 Sprint-2 (Aug 26 - Sep 01)
 
+-   GET CalendarEvents endpoint
+-   POST NewCalendarEvent endpoint
+-   PUT EditCalendarEvent endpoint
 -   create 'Header' component
 -   create 'Dashboard' (year view) component
 -   create 'MyMonth' page
@@ -109,8 +135,11 @@ Sprint-3 (Sep 02 - Sep 08th)
 -   GET User endpoint
 -   PUT EditUser endpoint
 
-## Nice-to-haves
+## Nice-to-haves (in no specific order)
 
+-   AI integration
+-   User image
+-   Province selection (for curriculum guidelines and statutory holidays)
 -   Darkmode
 -   'My Week' view
 -   Save multiple plans
