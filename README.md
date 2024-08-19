@@ -10,7 +10,7 @@ Teachers in BC are not provided with any organizational resources to structure t
 
 Being a teacher requires planning on many levels: Year-long curriculum goals, monthly unit schedules, weekly lesson organization, and daily planners are just a few examples that my app is aimed to assist with.
 
-Many teachers resort to using purchased spreadsheet templates. These can be pricey, and restrictive. Having a resource that is easy to personalize to their preferences
+Many teachers resort to using purchased spreadsheet templates. These can be pricey, and restrictive. Having a resource that is easy to personalize to their preference would be an asset for many educators.
 
 ### User Profile
 
@@ -20,11 +20,10 @@ My app is meant for use by teachers (teaching in BC, Canada), in all grades (K -
 
 -   User accounts to allow for persisting plans.
 -   Year, week, and day 'at-a-glance' views (YAAG, WAAG, and DAAG).
--   Check boxes for days-off and pro-d days
--   Canadian statutory holidays.
--   Ability to divide into terms or semesters, as needed.
--   Ability to define 'Big Ideas' and 'Learning Metrics' for each portion of the year.
--   Ability to add text notes to a plan.
+-   Ability to set days off, and pro-d days
+-   Automatic inclusion of Canadian statutory holidays, by province.
+-   Ability to define 'Big Ideas' and 'Learning Metrics' for the year.
+-   Ability to add text notes to the day plan.
 
 > ![IMPORTANT]
 > Next-up features, to be included as time permits:
@@ -75,10 +74,6 @@ My app is meant for use by teachers (teaching in BC, Canada), in all grades (K -
 -   My Month
 -   My Day
 
-### Mockups
-
-\*Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
-
 ### Data
 
 Each user profile will be associated with a planner table, in a 1:1 relationship.
@@ -96,7 +91,7 @@ Each user profile will be associated with a planner table, in a 1:1 relationship
 
 -   GET User
 
-    -   On login: get user data such as name, and calendar ID.
+    -   On login: get user data such as name, and planner ID.
 
 -   POST NewPlannerEvent
 
@@ -110,7 +105,7 @@ Each user profile will be associated with a planner table, in a 1:1 relationship
 
     -   Remove an event from the 'Planner_Events' table.
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > Additional endpoints to be added, time permiting:
 >
 > POST EditUser
@@ -120,7 +115,7 @@ Each user profile will be associated with a planner table, in a 1:1 relationship
 > DELETE DeleteUserAccount
 >
 > -   Delete a user's account, and associated data.
-
+>
 > POST UpdatePlannerEvent
 >
 > -   Edit the details of an event.
@@ -142,9 +137,8 @@ Sprint-1 (Aug 19th - Aug 25 )
 
 Sprint-2 (Aug 26 - Sep 01)
 
--   GET CalendarEvents endpoint
--   POST NewCalendarEvent endpoint
--   PUT EditCalendarEvent endpoint
+-   GET PlannerEvents endpoint
+-   POST NewPlannerEvent endpoint
 -   test endpoints
 -   create 'Header' component
 -   create 'Dashboard' (year view) component
@@ -160,7 +154,6 @@ Sprint-3 (Sep 02 - Sep 08th)
 -   'Create Account' page
 -   POST NewUser endpoint
 -   GET User endpoint
--   PUT EditUser endpoint
 -   test further endpoints
 -   test auth
 
@@ -171,6 +164,7 @@ Sprint-3 (Sep 02 - Sep 08th)
 -   Province selection (for curriculum guidelines and statutory holidays)
 -   Darkmode
 -   'My Month' view
+-   Ability to divide the year into terms or semesters, as needed.
 -   Better delivery of grade-relevant resources
 -   Ability for users to add, or link their own resources
 -   Reuseable lesson plans
@@ -188,4 +182,4 @@ Sprint-3 (Sep 02 - Sep 08th)
 
 -   Skill limitations: This proposal pushes my skills and understanding in pretty much every area. Many of the libraries and APIs are new to me. I will need to take care to avoid getting in over my head on any one feature. Deciding when to pivot away from a task that exceeds my current abilities will be key to staying on-schedule.
 
--   Scope Creep: Due to the hard deadline on this project it will be critical to keep the scope reasonable, and realistic. This will mean prioritizing core features, tracking progress daily, and pruning secondary features as necessary. Time management is an area that I struggle with especially, so makingit will be a top priority for this project.
+-   Scope Creep: Due to the hard deadline on this project it will be critical to keep the scope reasonable, and realistic. This will mean prioritizing core features, tracking progress daily, and pruning secondary features as necessary. Time management is an area that I struggle with especially; making it a top priority for this project.
