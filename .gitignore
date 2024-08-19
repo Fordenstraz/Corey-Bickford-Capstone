@@ -33,7 +33,7 @@ lerna-debug.log*
 
 # Other files
 proposal-assets/*
-.env*
+.env
 node_modules
 dist
 dist-ssr
