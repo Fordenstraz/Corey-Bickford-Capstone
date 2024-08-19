@@ -25,7 +25,7 @@ My app is meant for use by teachers (teaching in BC, Canada), in all grades (K -
 -   Ability to define 'Big Ideas' and 'Learning Metrics' for the year.
 -   Ability to add text notes to the day plan.
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > Next-up features, to be included as time permits:
 >
 > -   Repository for collected resources, and resource links:
