@@ -78,7 +78,7 @@ My app is meant for use by teachers (teaching in BC, Canada), in all grades (K -
 
 Each user profile will be associated with a planner table, in a 1:1 relationship.
 
-![Diagram showing the relationship between the 'Users' and 'Planner_Events' tables.](./proposal-assets/db_map.png)
+![Diagram showing the relationship between the 'Users' and 'Planner_Events' tables.](./client/src/assets/images/db_map.png)
 
 > [!IMPORTANT]
 > Future versions will allow each user profile to create multiple planners, in a 1:n relationship.
@@ -180,6 +180,8 @@ Sprint-3 (Sep 02 - Sep 08th)
 
 ## Challenges
 
+-   Time management: This is an area that I struggle with especially; making it a top priority for this project. I find that the slowest part of my projects has always been styling. I believe that using styling libraries, such as 'Tailwind CSS' and 'Flowbite', will be invaluable in helping me overcome my limitations.
+
 -   Skill limitations: This proposal pushes my skills and understanding in pretty much every area. Many of the libraries and APIs are new to me. I will need to take care to avoid getting in over my head on any one feature. Deciding when to pivot away from a task that exceeds my current abilities will be key to staying on-schedule.
 
--   Scope Creep: Due to the hard deadline on this project it will be critical to keep the scope reasonable, and realistic. This will mean prioritizing core features, tracking progress daily, and pruning secondary features as necessary. Time management is an area that I struggle with especially; making it a top priority for this project.
+-   Scope Creep: Due to the hard deadline on this project it will be critical to keep the scope reasonable, and realistic. This will mean prioritizing core features, tracking progress daily, and pruning secondary features as necessary.
