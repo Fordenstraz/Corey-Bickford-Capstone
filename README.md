@@ -1,4 +1,4 @@
-# Project Title
+# FRIZL (Flexible Resource and Implementation Zone for Lessons)
 
 ## Overview
 
