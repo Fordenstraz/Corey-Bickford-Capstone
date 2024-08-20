@@ -1,0 +1,6 @@
+/* Import Tailwind and Flowbite*/
+@import "flowbite";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
