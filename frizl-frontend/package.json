@@ -11,7 +11,12 @@
 		"start": "npm run dev"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.13.3",
+		"@emotion/styled": "^11.13.0",
+		"@fontsource/roboto": "^5.0.14",
 		"@heroicons/react": "^2.1.5",
+		"@mui/icons-material": "^5.16.7",
+		"@mui/material": "^5.16.7",
 		"axios": "^1.7.4",
 		"fullcalendar": "^6.1.15",
 		"moment": "^2.30.1",
