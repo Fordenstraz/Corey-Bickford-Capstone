@@ -18,35 +18,35 @@ export default function App() {
 			<CssBaseline />
 			<Router>
 				<Routes>
-					{/* <Route //login page
+					<Route //login page
 						path='/'
-						element={}
+						element={<LoginPage />}
 					/>
 
 					<Route //dashboard (year-view)
-						path='/'
-						element={}
+						path='/dashboard'
+						element={<Dashboard />}
 					/>
 
 					<Route //profile page
-						path='/'
-						element={}
+						path='/account'
+						element={<ProfilePage />}
 					/>
 
 					<Route //resources page
-						path='/'
-						element={}
+						path='/resources'
+						element={<ResourcesPage />}
 					/>
 
 					<Route //week-view page
-						path='/'
-						element={}
+						path='/my_week'
+						element={<MyWeekPage />}
 					/>
 
 					<Route //day-view page
-						path='/'
-						element={}
-					/> */}
+						path='/my_day'
+						element={<MyDayPage />}
+					/>
 
 					<Route //page not found
 						path='*'
