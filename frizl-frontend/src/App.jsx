@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 // Styling
-import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -19,37 +18,37 @@ export default function App() {
 			<Router>
 				<Routes>
 					<Route //login page
-						path='/'
+						path="/"
 						element={<LoginPage />}
 					/>
 
 					<Route //dashboard (year-view)
-						path='/dashboard'
+						path="/dashboard"
 						element={<Dashboard />}
 					/>
 
 					<Route //profile page
-						path='/account'
+						path="/account"
 						element={<ProfilePage />}
 					/>
 
 					<Route //resources page
-						path='/resources'
+						path="/resources"
 						element={<ResourcesPage />}
 					/>
 
 					<Route //week-view page
-						path='/my_week'
+						path="/my_week"
 						element={<MyWeekPage />}
 					/>
 
 					<Route //day-view page
-						path='/my_day'
+						path="/my_day"
 						element={<MyDayPage />}
 					/>
 
 					<Route //page not found
-						path='*'
+						path="*"
 						element={<PageNotFound />}
 					/>
 				</Routes>
