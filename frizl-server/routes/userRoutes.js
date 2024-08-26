@@ -1,5 +1,9 @@
+// Enable Router:
 const router = require("express").Router();
 
-// route
+// connect to controller:
+const userController = require("../controllers/userControllers");
+
+// delegate requests to controller functions:
 
 module.exports = router;
