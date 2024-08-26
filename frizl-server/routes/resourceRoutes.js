@@ -1,9 +1,24 @@
 // Enable Router:
 const router = require("express").Router();
 
-// connect to controller:
+// Connect to controller:
 const resourceController = require("../controllers/resourceControllers");
 
-// delegate requests to controller functions:
+// Delegate requests to controller functions:
+
+// POST a new resource:
+router.route("/resources").post(resourceController.newResource);
+
+// GET all resources:
+router.route("/resources").get(resourceController.getResources);
+
+// PUT edit a resource:
+//router.route("/resources").put(resourceController.editResource);
+
+// DELETE a resource:
+router
+	.route("/resources")
+	.delete(resourceController.deleteResource)
+	.put(resourceController.update);
 
 module.exports = router;
