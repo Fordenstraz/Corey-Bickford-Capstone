@@ -4,9 +4,6 @@ const knex = require("knex")(require("../knexfile"));
 // POST a new user profile:
 const newUser = async (req, res) => {
 	try {
-		res.status(200).json({
-			message: `This endpoint works!`,
-		});
 	} catch (e) {
 		res.status(400).json({
 			message: `Uh-oh, there's an issue: ${error}`,
@@ -17,9 +14,6 @@ const newUser = async (req, res) => {
 // GET user data:
 const getUserData = async (req, res) => {
 	try {
-		res.status(200).json({
-			message: `This endpoint works!`,
-		});
 	} catch (e) {
 		res.status(400).json({
 			message: `Uh-oh, there's an issue: ${error}`,
@@ -30,15 +24,15 @@ const getUserData = async (req, res) => {
 // PUT edit user data:
 // const editUserData = async (req, res) => {
 // 	try {
-// 	} catch (e) {}
+// 	} catch (e) {
+//      res.status(400).json({
+//			message: `Uh-oh, there's an issue: ${error}`,
+//		});}
 // };
 
 // DELETE a user:
 const deleteUser = async (req, res) => {
 	try {
-		res.status(200).json({
-			message: `This endpoint works!`,
-		});
 	} catch (e) {
 		res.status(400).json({
 			message: `Uh-oh, there's an issue: ${error}`,

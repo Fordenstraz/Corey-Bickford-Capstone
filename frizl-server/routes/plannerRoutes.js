@@ -7,15 +7,15 @@ const plannerController = require("../controllers/plannerControllers");
 // Delegate requests to controller functions
 
 // POST a new event:
-router.route("/planner").post(plannerController.newEvent);
+router.route("/").post(plannerController.newEvent);
 
 // GET all events:
-router.route("/planner").get(plannerController.getEvents);
+router.route("/").get(plannerController.getEvents);
 
 // PUT edit an event:
-//router.route("/planner").put(plannerController.editEvent);
+//router.route("/").put(plannerController.editEvent);
 
 // DELETE an event:
-router.route("/planner").delete(plannerController.deleteEvent);
+router.route("/").delete(plannerController.deleteEvent);
 
 module.exports = router;

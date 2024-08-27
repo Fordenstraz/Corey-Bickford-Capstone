@@ -7,15 +7,15 @@ const resourceController = require("../controllers/resourceControllers");
 // Delegate requests to controller functions:
 
 // POST a new resource:
-router.route("/resources").post(resourceController.newResource);
+router.route("/").post(resourceController.newResource);
 
 // GET all resources:
-router.route("/resources").get(resourceController.getResources);
+router.route("/").get(resourceController.getResources);
 
 // PUT edit a resource:
-//router.route("/resources").put(resourceController.editResource);
+//router.route("/").put(resourceController.editResource);
 
 // DELETE a resource:
-router.route("/resources").delete(resourceController.deleteResource);
+router.route("/").delete(resourceController.deleteResource);
 
 module.exports = router;
