@@ -7,10 +7,10 @@ const userController = require("../controllers/userControllers");
 // Delegate requests to controller functions:
 
 // POST a new user profile:
-router.route("/").post(userController.newUser);
+router.route("/account").post(userController.newUser);
 
 // GET user data:
-router.route("/").get(userController.getUserData);
+router.route("/account").get(userController.getUserData);
 
 // PUT edit user data:
 //router.route("/account").put(userController.editUserData);
