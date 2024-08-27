@@ -16,9 +16,6 @@ router.route("/").get(userController.getUserData);
 //router.route("/account").put(userController.editUserData);
 
 // DELETE a user:
-router
-	.route("/account")
-	.delete(userController.deleteUser)
-	.put(userController.update);
+router.route("/account").delete(userController.deleteUser);
 
 module.exports = router;

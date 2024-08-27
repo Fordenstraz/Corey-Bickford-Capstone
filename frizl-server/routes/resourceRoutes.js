@@ -16,9 +16,6 @@ router.route("/resources").get(resourceController.getResources);
 //router.route("/resources").put(resourceController.editResource);
 
 // DELETE a resource:
-router
-	.route("/resources")
-	.delete(resourceController.deleteResource)
-	.put(resourceController.update);
+router.route("/resources").delete(resourceController.deleteResource);
 
 module.exports = router;

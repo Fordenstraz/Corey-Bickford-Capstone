@@ -1,6 +1,29 @@
 // Enable KNEX:
 const knex = require("knex")(require("../knexfile"));
 
-// endpoint controller function
+// POST a new user profile:
+const newUser = async (req, res) => {
+	try {
+	} catch (e) {}
+};
 
-module.exports = {}; //export controller functions
+// GET user data:
+const getUserData = async (req, res) => {
+	try {
+	} catch (e) {}
+};
+
+// PUT edit user data:
+// const editUserData = async (req, res) => {
+// 	try {
+// 	} catch (e) {}
+// };
+
+// DELETE a user:
+const deleteUser = async (req, res) => {
+	try {
+	} catch (e) {}
+};
+
+// Export controller functions:
+module.exports = { newUser, getUserData, deleteUser };

@@ -16,9 +16,6 @@ router.route("/planner").get(plannerController.getEvents);
 //router.route("/planner").put(plannerController.editEvent);
 
 // DELETE an event:
-router
-	.route("/planner")
-	.delete(plannerController.deleteEvent)
-	.put(plannerController.update);
+router.route("/planner").delete(plannerController.deleteEvent);
 
 module.exports = router;
