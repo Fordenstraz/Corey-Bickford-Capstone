@@ -3,20 +3,17 @@
 // Styling
 
 // Components
-import {
-	SignedIn,
-	SignedOut,
-	SignInButton,
-	UserButton,
-} from "@clerk/clerk-react";
 
+// Login Page:
 export default function LoginPage() {
 	return (
 		<header>
 			<SignedOut>
-				<h2>Please sign in:</h2>
+				<h1>Welcome to FRIZL</h1>
 
-				<SignInButton />
+				<SignInButton mode="modal">
+					<button>Let's go!</button>
+				</SignInButton>
 			</SignedOut>
 
 			<SignedIn>
