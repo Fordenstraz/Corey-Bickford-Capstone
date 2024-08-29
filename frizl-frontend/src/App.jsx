@@ -8,7 +8,13 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-// Components
+// Pages
+import LoginPage from "./pages/LoginPage";
+import Dashboard from "./pages/Dashboard";
+import ProfilePage from "./pages/ProfilePage";
+import ResourcesPage from "./pages/ResourcesPage";
+import MyWeekPage from "./pages/MyWeekPage";
+import MyDayPage from "./pages/MyDayPage";
 import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
