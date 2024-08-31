@@ -10,7 +10,7 @@ import axios from "axios";
 
 // Pages
 import FRIZL from "./pages/FRIZL";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import Dashboard from "./pages/Dashboard";
 import ProfilePage from "./pages/ProfilePage";
 import ResourcesPage from "./pages/ResourcesPage";
@@ -33,63 +33,5 @@ export default function App() {
 	// 		);
 	// }, []);
 
-	return (
-		<>
-			<Router>
-				<Routes>
-					{/* Redirect to login if user is not signed in */}
-					<Route
-						path="/"
-						element={
-							isAuthenticated ? (
-								<Navigate to="/dashboard" />
-							) : (
-								<LoginPage />
-							)
-						}
-					/>
-
-					{/* Dashboard and app routes only accessible if user is authenticated */}
-					{isAuthenticated && (
-						<>
-							<Route
-								path="/dashboard"
-								element={<FRIZL />}>
-								<Route
-									index
-									element={<Dashboard />}
-								/>
-
-								<Route
-									path="account"
-									element={<ProfilePage />}
-								/>
-
-								<Route
-									path="resources"
-									element={<ResourcesPage />}
-								/>
-
-								<Route
-									path="my_week"
-									element={<MyWeekPage />}
-								/>
-
-								<Route
-									path="my_day"
-									element={<MyDayPage />}
-								/>
-							</Route>
-						</>
-					)}
-
-					{/* Catch-all route for unknown pages */}
-					<Route
-						path="*"
-						element={<PageNotFound />}
-					/>
-				</Routes>
-			</Router>
-		</>
-	);
+	return <LoginPage />;
 }

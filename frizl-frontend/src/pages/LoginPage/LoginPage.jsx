@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 // Styling
+import "./LoginPage.scss";
 
 // Components
-import BasicButton from "../components/BasicButton/BasicButton";
+import BasicButton from "../../components/BasicButton/BasicButton";
 
 // Login Page:
 export default function LoginPage() {
