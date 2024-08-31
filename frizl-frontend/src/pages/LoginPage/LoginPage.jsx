@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { GoogleLogin } from "@react-oauth/google";
 // Styling
 import "./LoginPage.scss";
 
@@ -41,6 +42,21 @@ export default function LoginPage() {
 		});
 	};
 
+	// Google OAuth success handler:
+	const handleGoogleSuccess = async response => {
+		const { credential } = response;
+
+		// Here you would typically send the credential to your server to validate the user or create a new user.
+		console.log("Google login successful", credential);
+		navigate("/dashboard");
+	};
+
+	// Google OAuth failure handler:
+	const handleGoogleFailure = error => {
+		console.error("Google login failed", error);
+		alert("Google login failed. Please try again.");
+	};
+
 	// Submission handler:
 	const confirmLogin = event => {
 		event.preventDefault();
@@ -48,40 +64,19 @@ export default function LoginPage() {
 		// check for valid inputs:
 		const missingInputValue = {
 			// 'missingInputValue' is true if value is empty:
-			title: !values.title,
-			description: !values.description,
+			email: !values.email,
+			password: !values.password,
 		};
 
 		setErrors(missingInputValue);
 
 		// if no errors, continue:
 		if (!missingInputValue.title && !missingInputValue.description) {
-			// check posting time:
-			const postedTime = new Date();
-			const timestamp = postedTime.getTime();
-
 			// axios POST to server:
-			axios
-				.post("http://localhost:8080/videos/upload", {
-					title: values.title,
-					channel: "Mohan Muruge",
-					image: uploadVideoThumbnail,
-					altText:
-						"A close up of a runner on the starting blocks, holding a relay baton",
-					description: values.description,
-					views: 0,
-					likes: 0,
-					duration: "12:34",
-					video: uploadVideoThumbnail,
-					timestamp: timestamp,
-					comments: [],
-				})
-				.catch(error => console.log(error));
+			axios.post("", {}).catch(error => console.log(error));
 
-			alert("Video upload successful");
-			fetchVideoList();
-			scrollToTop();
-			navigate("/");
+			alert("");
+			navigate("/Dashboard");
 		}
 	};
 
@@ -115,6 +110,27 @@ export default function LoginPage() {
 					label="LOGIN"
 					action={confirmLogin}
 				/>
+
+				<div className="oauth-wrapper">
+					<p>Login with another account</p>
+					<GoogleLogin
+						onSuccess={handleGoogleSuccess}
+						onError={handleGoogleFailure}
+					/>
+				</div>
+
+				<div className="create-account">
+					<p>
+						Don't have an account?
+						<Link
+							to="#"
+							onClick={() =>
+								console.log("Open create account modal")
+							}>
+							Create one here
+						</Link>
+					</p>
+				</div>
 			</form>
 		</>
 	);
