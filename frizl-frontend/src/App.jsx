@@ -1,14 +1,15 @@
 // Imports
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Navigate,
+} from "react-router-dom";
 import axios from "axios";
-// Styling
-import CssBaseline from "@mui/material/CssBaseline";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+
 // Pages
+import FRIZL from "./pages/FRIZL";
 import LoginPage from "./pages/LoginPage";
 import Dashboard from "./pages/Dashboard";
 import ProfilePage from "./pages/ProfilePage";
@@ -18,43 +19,72 @@ import MyDayPage from "./pages/MyDayPage";
 import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
+	// Use state to track if the user is signed in:
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+	// Placeholder authentication check:
+	// useEffect(() => {
+	// 	// Replace with actual auth check logic
+	// 	axios
+	// 		.get("/api/auth/check")
+	// 		.then(response => setIsAuthenticated(response.data.isAuthenticated))
+	// 		.catch(error =>
+	// 			console.error("Error checking authentication", error)
+	// 		);
+	// }, []);
+
 	return (
 		<>
-			<CssBaseline />
-
 			<Router>
 				<Routes>
-					<Route //login page
+					{/* Redirect to login if user is not signed in */}
+					<Route
 						path="/"
-						element={<LoginPage />}
+						element={
+							isAuthenticated ? (
+								<Navigate to="/dashboard" />
+							) : (
+								<LoginPage />
+							)
+						}
 					/>
 
-					<Route //dashboard (year-view)
-						path="/dashboard"
-						element={<Dashboard />}
-					/>
+					{/* Dashboard and app routes only accessible if user is authenticated */}
+					{isAuthenticated && (
+						<>
+							<Route
+								path="/dashboard"
+								element={<FRIZL />}>
+								<Route
+									index
+									element={<Dashboard />}
+								/>
 
-					<Route //profile page
-						path="/account"
-						element={<ProfilePage />}
-					/>
+								<Route
+									path="account"
+									element={<ProfilePage />}
+								/>
 
-					<Route //resources page
-						path="/resources"
-						element={<ResourcesPage />}
-					/>
+								<Route
+									path="resources"
+									element={<ResourcesPage />}
+								/>
 
-					<Route //week-view page
-						path="/my_week"
-						element={<MyWeekPage />}
-					/>
+								<Route
+									path="my_week"
+									element={<MyWeekPage />}
+								/>
 
-					<Route //day-view page
-						path="/my_day"
-						element={<MyDayPage />}
-					/>
+								<Route
+									path="my_day"
+									element={<MyDayPage />}
+								/>
+							</Route>
+						</>
+					)}
 
-					<Route //page not found
+					{/* Catch-all route for unknown pages */}
+					<Route
 						path="*"
 						element={<PageNotFound />}
 					/>
