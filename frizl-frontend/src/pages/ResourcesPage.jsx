@@ -5,5 +5,9 @@
 // Components
 
 export default function ResourcesPage() {
-	return <></>;
+	return (
+		<>
+			<h1>RESOURCES</h1>
+		</>
+	);
 }

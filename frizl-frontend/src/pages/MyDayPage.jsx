@@ -5,5 +5,9 @@
 // Components
 
 export default function MyDayPage() {
-	return <></>;
+	return (
+		<>
+			<h1>MY DAY</h1>
+		</>
+	);
 }

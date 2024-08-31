@@ -5,5 +5,9 @@
 // Components
 
 export default function Dashboard() {
-	return <></>;
+	return (
+		<>
+			<h1>DASHBOARD</h1>
+		</>
+	);
 }

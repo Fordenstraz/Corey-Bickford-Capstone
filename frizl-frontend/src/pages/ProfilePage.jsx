@@ -5,5 +5,9 @@
 // Components
 
 export default function ProfilePage() {
-	return <></>;
+	return (
+		<>
+			<h1>PROFILE</h1>
+		</>
+	);
 }
