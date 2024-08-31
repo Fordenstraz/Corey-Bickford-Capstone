@@ -42,7 +42,7 @@ export default function LoginPage() {
 	};
 
 	// Submission handler:
-	const confirmSubmit = event => {
+	const confirmLogin = event => {
 		event.preventDefault();
 
 		// check for valid inputs:
@@ -111,7 +111,10 @@ export default function LoginPage() {
 					required
 				/>
 
-				<BasicButton />
+				<BasicButton
+					label="LOGIN"
+					action={confirmLogin}
+				/>
 			</form>
 		</>
 	);
