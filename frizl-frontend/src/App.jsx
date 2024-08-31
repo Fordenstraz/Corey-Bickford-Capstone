@@ -33,5 +33,14 @@ export default function App() {
 	// 		);
 	// }, []);
 
-	return <LoginPage />;
+	return (
+		<Router>
+			<Routes>
+				<Route
+					path="/"
+					element={<LoginPage />}
+				/>
+			</Routes>
+		</Router>
+	);
 }
