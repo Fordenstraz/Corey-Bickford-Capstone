@@ -10,7 +10,7 @@ import "./LoginPage.scss";
 import BasicButton from "../../components/BasicButton/BasicButton";
 
 // Login Page:
-export default function LoginPage() {
+export default function LoginPage({ appUrl }) {
 	// Initialize navigation:
 	const navigate = useNavigate();
 
@@ -58,7 +58,7 @@ export default function LoginPage() {
 	};
 
 	// Submission handler:
-	const confirmLogin = event => {
+	const confirmLogin = async event => {
 		event.preventDefault();
 
 		// check for valid inputs:
@@ -71,12 +71,17 @@ export default function LoginPage() {
 		setErrors(missingInputValue);
 
 		// if no errors, continue:
-		if (!missingInputValue.title && !missingInputValue.description) {
-			// axios POST to server:
-			axios.post("", {}).catch(error => console.log(error));
+		if (!missingInputValue.email && !missingInputValue.password) {
+			try {
+				// axios POST to server:
+			axios
+				.post(`${appUrl}/login`, {})
+				.catch(error => console.log(error));
 
 			alert("");
 			navigate("/Dashboard");
+			}
+			
 		}
 	};
 
@@ -84,7 +89,7 @@ export default function LoginPage() {
 		<>
 			<h1>Welcome to FRIZL</h1>
 
-			<form>
+			<form className="login-form">
 				<label htmlFor="loginEmail">EMAIL</label>
 				<input
 					id="loginEmail"

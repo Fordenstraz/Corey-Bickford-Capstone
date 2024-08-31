@@ -9,24 +9,28 @@ const authKey = process.env.JWT_SECRET_KEY;
 // POST a new user profile:
 const newUser = async (req, res) => {
 	// verify that all required data was provided:
-	const { firstName, lastName, email, location, language, password } =
+	const { firstName, lastName, email, location, frenchImmersion, password } =
 		req.body;
 
+	if (!firstName || !lastName || !email || !password) {
+		return res
+			.status(400)
+			.json({ message: "Please fill all required fields." });
+	}
+
+	// attempt to ceate a new user account:
 	try {
 		// ensure the provided email has no existing account:
 		const existingUser = await knex("users").where({ email }).first();
 
 		if (existingUser) {
-			return res
-				.status(400)
-				.send({
-					message:
-						"This email is already associated with an account.",
-				});
+			return res.status(400).json({
+				message: "This email is already associated with an account.",
+			});
 		}
 
 		// create a password hash:
-		const hashedPassword = await bcrypt.hash(password, 10);
+		const hashedPassword = await bcrypt.hash(password, 12);
 
 		// add new user to the database:
 		await knex("users").insert({
@@ -39,10 +43,10 @@ const newUser = async (req, res) => {
 		});
 
 		// send response:
-		res.status(201).send({ message: "User registration was successfull!" });
+		res.status(201).json({ message: "User registration was successfull!" });
 	} catch (error) {
 		console.error("Error during user registration:", error);
-		res.status(500).send({ message: "Error registering user." });
+		res.status(500).json({ message: "Error registering user." });
 	}
 };
 
@@ -51,23 +55,31 @@ const userLogin = async (req, res) => {
 	// ensure proper form submission:
 	const { email, password } = req.body;
 
+	if (!email || !password) {
+		return res
+			.status(400)
+			.json({ message: "Email and password are required." });
+	}
+
+	// attempt to authenticate the user:
 	try {
 		// locate user data in the database:
 		const user = await knex("users").where({ email }).first();
 
 		// check the user's credentials:
-		if (user && (await bcrypt.compare(password, user.password))) {
+		if (user && (await bcrypt.compare(password, user.password_hash))) {
 			// generate a token for the user:
-			const token = jwt.sign({ email: user.email }, SECRET_KEY, {
-				expiresIn: "1h",
+			const token = jwt.sign({ email: user.email }, authKey, {
+				expiresIn: "6h",
 			});
-			res.send({ message: "Login successful!", token });
+			res.status(200).json({ message: "Login successful!", token });
 		} else {
-			res.status(401).send({ message: "Invalid login credentials" });
+			res.status(401).json({ message: "Invalid login credentials." });
 		}
 	} catch (error) {
+		console.error("Error during login attempt:", error);
 		res.status(500).json({
-			message: `Uh-oh, there was an issue while attempting login: ${error}`,
+			message: `Uh-oh, there was an issue while attempting to login.`,
 		});
 	}
 };
@@ -75,9 +87,20 @@ const userLogin = async (req, res) => {
 // GET user data:
 const getUserData = async (req, res) => {
 	try {
+		const userFound = await knex("users").where("users.id");
+
+		//if no item is found return 404:
+		if (userFound.length === 0) {
+			return res.status(404).json({
+				message: `no user found with the email: ${req.email}`,
+			});
+		}
+
+		const userData = userFound[0];
+		res.json(userData);
 	} catch (error) {
 		res.status(500).json({
-			message: `Uh-oh, there's an issue: ${error}`,
+			message: `Uh-oh, there's an issue: ${error.message}`,
 		});
 	}
 };

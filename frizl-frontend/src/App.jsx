@@ -19,26 +19,15 @@ import MyDayPage from "./pages/MyDayPage";
 import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
-	// Use state to track if the user is signed in:
-	const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-	// Placeholder authentication check:
-	// useEffect(() => {
-	// 	// Replace with actual auth check logic
-	// 	axios
-	// 		.get("/api/auth/check")
-	// 		.then(response => setIsAuthenticated(response.data.isAuthenticated))
-	// 		.catch(error =>
-	// 			console.error("Error checking authentication", error)
-	// 		);
-	// }, []);
+	// Set API URL:
+	const appUrl = import.meta.env.VITE_API_URL;
 
 	return (
 		<Router>
 			<Routes>
 				<Route
 					path="/"
-					element={<LoginPage />}
+					element={<LoginPage appUrl={appUrl} />}
 				/>
 			</Routes>
 		</Router>
