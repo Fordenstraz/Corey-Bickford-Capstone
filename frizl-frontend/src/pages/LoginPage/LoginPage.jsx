@@ -14,6 +14,9 @@ export default function LoginPage({ appUrl }) {
 	// Initialize navigation:
 	const navigate = useNavigate();
 
+	// Context function to update user data:
+	const { updateUser } = useUser();
+
 	// Track input state:
 	const [values, setValues] = useState({
 		email: "",
@@ -57,7 +60,7 @@ export default function LoginPage({ appUrl }) {
 		alert("Google login failed. Please try again.");
 	};
 
-	// Submission handler:
+	// Login handler:
 	const confirmLogin = async event => {
 		event.preventDefault();
 
@@ -70,7 +73,7 @@ export default function LoginPage({ appUrl }) {
 
 		setErrors(missingInputValue);
 
-		// if no errors, continue:
+		// if no errors, continue to login:
 		if (!missingInputValue.email && !missingInputValue.password) {
 			try {
 				// axios POST login attempt to server:
@@ -89,6 +92,12 @@ export default function LoginPage({ appUrl }) {
 				// verify successful login:
 				if (response.status === 200) {
 					console.log("Successful login.");
+
+					// GET user data request:
+					const userData = await axios.get(`${apiUrl}/account`);
+
+					// set user data in the user context:
+					updateUser(userData);
 
 					// Navigate to the dashboard:
 					navigate("/Dashboard");

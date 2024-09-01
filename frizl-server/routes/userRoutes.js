@@ -16,9 +16,9 @@ router.route("/login").post(userController.userLogin);
 router.route("/").get(userController.getUserData);
 
 // PUT edit user data:
-//router.route("/").put(userController.editUserData);
+//router.route("/edit").put(userController.editUserData);
 
 // DELETE a user:
-router.route("/").delete(userController.deleteUser);
+router.route("/delete").delete(userController.deleteUser);
 
 module.exports = router;
