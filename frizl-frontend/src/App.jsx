@@ -9,11 +9,11 @@ import {
 import axios from "axios";
 
 // Pages
-import FRIZL from "./pages/FRIZL";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Dashboard from "./pages/Dashboard";
 import ProfilePage from "./pages/ProfilePage";
 import ResourcesPage from "./pages/ResourcesPage";
+import MyYear from "./pages/MyYear";
 import MyWeekPage from "./pages/MyWeekPage";
 import MyDayPage from "./pages/MyDayPage";
 import PageNotFound from "./pages/PageNotFound";
