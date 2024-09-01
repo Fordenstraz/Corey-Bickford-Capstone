@@ -70,9 +70,21 @@ const userLogin = async (req, res) => {
 		if (user && (await bcrypt.compare(password, user.password_hash))) {
 			// generate a token for the user:
 			const token = jwt.sign({ email: user.email }, authKey, {
+				// token duration:
 				expiresIn: "6h",
 			});
-			res.status(200).json({ message: "Login successful!", token });
+
+			// set the token as an HTTP-only cookie:
+			res.cookie("token", token, {
+				httpOnly: true,
+				// in production, only send cookie over HTTPS:
+				secure: process.env.NODE_ENV === "production",
+				sameSite: "Strict",
+				// set cookie expiry to match token duration:
+				maxAge: 6 * 60 * 60 * 1000,
+			});
+
+			res.status(200).json({ message: "Login successful!" });
 		} else {
 			res.status(401).json({ message: "Invalid login credentials." });
 		}

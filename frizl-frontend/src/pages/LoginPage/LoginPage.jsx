@@ -73,15 +73,31 @@ export default function LoginPage({ appUrl }) {
 		// if no errors, continue:
 		if (!missingInputValue.email && !missingInputValue.password) {
 			try {
-				// axios POST to server:
-			axios
-				.post(`${appUrl}/login`, {})
-				.catch(error => console.log(error));
+				// axios POST login attempt to server:
+				const response = await axios.post(
+					`${appUrl}/account/login`,
+					{
+						email: values.email,
+						password: values.password,
+					},
+					{
+						// enable cookies with the request:
+						withCredentials: true,
+					}
+				);
 
-			alert("");
-			navigate("/Dashboard");
+				// verify successful login:
+				if (response.status === 200) {
+					console.log("Successful login.");
+
+					// Navigate to the dashboard:
+					navigate("/Dashboard");
+				} else {
+					console.log("Login failed.");
+				}
+			} catch (error) {
+				console.error("Uh-oh! An error ocurred during login:", error);
 			}
-			
 		}
 	};
 
