@@ -2,7 +2,7 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import { UserProvider } from "./UserContext";
+import { UserProvider } from "./context/userContext.jsx";
 // OAuth
 import { GoogleOAuthProvider } from "@react-oauth/google";
 const googleClientId =

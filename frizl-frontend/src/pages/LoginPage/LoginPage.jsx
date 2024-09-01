@@ -2,10 +2,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { GoogleLogin } from "@react-oauth/google";
+import { useUser } from "../../context/UserContext";
 // Styling
 import "./LoginPage.scss";
-
 // Components
 import BasicButton from "../../components/BasicButton/BasicButton";
 
@@ -128,7 +127,7 @@ export default function LoginPage({ appUrl }) {
 
 				<div className="create-account">
 					<p>
-						Don't have an account?
+						Don't have an account?{" "}
 						<Link
 							to="#"
 							onClick={() =>

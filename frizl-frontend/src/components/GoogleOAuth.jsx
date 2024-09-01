@@ -1,3 +1,6 @@
+// Import
+import { GoogleLogin } from "@react-oauth/google";
+
 export default function GoogleOAuth() {
 	// Google OAuth success handler:
 	const handleGoogleSuccess = async response => {
