@@ -37,7 +37,7 @@
 	}
 
 	&__text {
-		@extend %labels_buttons-mobile;
+		@extend %mobile__labels-buttons;
 		font-size: 0.825rem;
 		padding-top: 0.3rem;
 

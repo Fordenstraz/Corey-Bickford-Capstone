@@ -3,31 +3,31 @@
 
 // MOBILE TYPOGRAPHY
 
-%page_header-mobile {
+%mobile__page-header {
 	font-family: "Roboto", Helvetica, sans-serif;
 	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 2rem;
 }
 
-%section_header-mobile {
-	@extend %page_header-mobile;
+%mobile__section-header {
+	@extend %mobile__page-header;
 	font-size: 0.75rem;
 	line-height: 1.25rem;
 }
 
-%subheader-mobile {
-	@extend %page_header-mobile;
+%mobile__subheader {
+	@extend %mobile__page-header;
 	font-size: 0.85rem;
 	line-height: 1.125rem;
 }
 
-%body_copy-mobile {
-	@extend %subheader-mobile;
+%mobile__body-copy {
+	@extend %mobile__subheader;
 	font-weight: 400;
 }
 
-%labels_buttons-mobile {
+%mobile__labels-buttons {
 	font-family: "Roboto", Helvetica, sans-serif;
 	font-size: 0.75rem;
 	font-weight: 500;
