@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 // Styling
 import "./Navbar.scss";
 
-export default function BottomNavBar() {
+export default function Navbar() {
 	// Logic for highlighting current menu option:
 	const view = useLocation(); // enables path checking
 	// current view is held in state:
