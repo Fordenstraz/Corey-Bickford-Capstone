@@ -1,4 +1,4 @@
-// Imports
+// Import
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Styling
@@ -7,7 +7,7 @@ import "./styles/app.scss";
 // Pages
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import ProfilePage from "./pages/ProfilePage";
+import AccountPage from "./pages/AccountPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import MyYearPage from "./pages/MyYearPage";
 import MyWeekPage from "./pages/MyWeekPage";
@@ -31,7 +31,7 @@ export default function App() {
 					element={<Dashboard />}>
 					<Route
 						index
-						element={<ProfilePage />}
+						element={<AccountPage />}
 					/>
 
 					<Route

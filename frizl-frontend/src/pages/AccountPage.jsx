@@ -4,7 +4,7 @@
 
 // Components
 
-export default function ProfilePage() {
+export default function AccountPage() {
 	return (
 		<>
 			<h1>PROFILE</h1>
