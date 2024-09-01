@@ -105,7 +105,8 @@ export default function LoginPage({ appUrl }) {
 					type="email"
 					name="email"
 					placeholder="Me@email.com"
-					value={values.title}
+					value={values.email}
+					onChange={handleInputChange}
 					autoFocus="on"
 					autoComplete="on"
 					required
@@ -116,7 +117,8 @@ export default function LoginPage({ appUrl }) {
 					id="loginPassword"
 					type="password"
 					name="password"
-					value={values.title}
+					value={values.password}
+					onChange={handleInputChange}
 					required
 				/>
 
