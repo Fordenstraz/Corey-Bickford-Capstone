@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import "./Dashboard.scss";
 // Components
 import Navbar from "../../components/Navbar/Navbar.jsx";
+import SpeedDialMenu from "../../components/SpeedDialMenu/SpeedDialMenu.jsx";
 
 export default function Dashboard() {
 	return (
@@ -13,6 +14,9 @@ export default function Dashboard() {
 
 			{/* Insert page content: */}
 			<Outlet />
+
+			{/* Speed dial menu */}
+			<SpeedDialMenu />
 		</div>
 	);
 }
