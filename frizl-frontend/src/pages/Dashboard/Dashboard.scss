@@ -1,0 +1,9 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/media";
+@use "../../styles/partials/typography";
+
+.dashboard {
+	@include media.tablet {
+		padding-top: 3rem;
+	}
+}

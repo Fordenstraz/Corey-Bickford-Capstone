@@ -1,16 +1,12 @@
 // Imports
-import React, { useEffect, useState } from "react";
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Navigate,
-} from "react-router-dom";
-import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Styling
+import "./styles/app.scss";
 
 // Pages
 import LoginPage from "./pages/LoginPage/LoginPage";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import ProfilePage from "./pages/ProfilePage";
 import ResourcesPage from "./pages/ResourcesPage";
 import MyYearPage from "./pages/MyYearPage";
