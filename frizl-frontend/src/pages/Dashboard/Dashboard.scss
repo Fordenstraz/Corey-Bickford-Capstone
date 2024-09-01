@@ -3,7 +3,10 @@
 @use "../../styles/partials/typography";
 
 .dashboard {
+	background-color: colors.$off-white;
+	padding: 0 0 3rem;
+
 	@include media.tablet {
-		padding-top: 3rem;
+		padding: 3rem 0 0;
 	}
 }
