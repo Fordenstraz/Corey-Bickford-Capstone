@@ -128,10 +128,33 @@ const getUserData = async (req, res) => {
 
 // DELETE a user:
 const deleteUser = async (req, res) => {
+	// attempt to delete user data:
 	try {
+		// verify that a user ID has been provided:
+		const userId = req.body.id;
+
+		if (!userId) {
+			return res
+				.status(400)
+				.json({ message: "A user ID is required to delete a user." });
+		}
+
+		// ensure that the provided user ID is valid:
+		const user = await knex("users").where({ id: userId }).first();
+
+		if (!user) {
+			return res.status(404).json({ message: "User not found." });
+		}
+
+		// delete the user data from the database:
+		await knex("users").where({ id: userId }).del();
+
+		// Send a success response:
+		res.status(200).json({ message: "User deleted successfully." });
 	} catch (error) {
+		console.error("Error deleting user:", error.message);
 		res.status(500).json({
-			message: `Uh-oh, there's an issue: ${error}`,
+			message: `Uh-oh, there's an issue: ${error.message}`,
 		});
 	}
 };
