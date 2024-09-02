@@ -27,7 +27,9 @@ export default function SpeedDialMenu() {
 	return (
 		<div className="speed-dial">
 			<button
-				className="speed-dial__button"
+				className={`speed-dial__button ${
+					isOpen === true ? "speed-dial__button--active" : ""
+				}`}
 				onClick={toggleSpeedDial}>
 				+
 			</button>

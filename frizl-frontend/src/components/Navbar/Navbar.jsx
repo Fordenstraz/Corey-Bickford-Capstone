@@ -6,7 +6,9 @@ import "./Navbar.scss";
 
 export default function Navbar() {
 	// Logic for highlighting current menu option:
-	const view = useLocation(); // enables path checking
+	//
+	// enables path checking:
+	const view = useLocation();
 	// current view is held in state:
 	const [activeView, setActiveView] = useState(view.pathname);
 	// update state when a new view is selected:

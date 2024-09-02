@@ -9,7 +9,7 @@ import SpeedDialMenu from "../../components/SpeedDialMenu/SpeedDialMenu.jsx";
 export default function Dashboard() {
 	return (
 		<div className="dashboard">
-			{/* Nav at bottom for mobile and top for larger screens */}
+			{/* Nav at bottom for mobile, top for large screens */}
 			<Navbar />
 
 			{/* Insert page content: */}

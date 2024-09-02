@@ -22,7 +22,16 @@
 		cursor: pointer;
 
 		&:hover {
-			transform: rotate(135deg);
+			background-color: colors.$secondary_highlight;
+		}
+
+		&--active {
+			background-color: colors.$secondary_shade;
+			transform: rotate(45deg);
+
+			&:hover {
+				background-color: colors.$secondary_shade;
+			}
 		}
 	}
 
