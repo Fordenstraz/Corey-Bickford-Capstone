@@ -5,6 +5,8 @@ import axios from "axios";
 import { useUser } from "../../context/UserContext";
 // Styling
 import "./LoginPage.scss";
+// Assets
+import logo from "../../assets/icons/frizl.svg";
 // Components
 import BasicButton from "../../components/BasicButton/BasicButton";
 
@@ -95,10 +97,18 @@ export default function LoginPage({ appUrl }) {
 	};
 
 	return (
-		<>
+		<section className="login-page">
+			<div className="icon">
+				<img
+					className="icon__image"
+					src={logo}
+					alt="A simple orange silhouette of a messy top-bun hairstyle."
+				/>
+			</div>
+
 			<h1>Welcome to FRIZL</h1>
 
-			<form className="login-form">
+			<form className="login-page__form">
 				<label htmlFor="loginEmail">EMAIL</label>
 				<input
 					id="loginEmail"
@@ -124,22 +134,25 @@ export default function LoginPage({ appUrl }) {
 
 				<BasicButton
 					label="LOGIN"
-					action={confirmLogin}
+					// Temporarily bypass auth with navigate:
+					//action={confirmLogin}
+					action={() => navigate("/dashboard")}
 				/>
-
-				<div className="create-account">
-					<p>
-						Don't have an account?{" "}
-						<Link
-							to="#"
-							onClick={() =>
-								console.log("Open create account modal")
-							}>
-							Create one here
-						</Link>
-					</p>
-				</div>
 			</form>
-		</>
+
+			<div className="create-account">
+				<p>
+					Don't have an account?{" "}
+					<Link
+						className="create-account__link"
+						to="#"
+						onClick={() =>
+							console.log("Open create account modal")
+						}>
+						Create one here
+					</Link>
+				</p>
+			</div>
+		</section>
 	);
 }

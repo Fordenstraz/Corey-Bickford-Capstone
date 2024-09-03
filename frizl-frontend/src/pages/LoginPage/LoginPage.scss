@@ -1,1 +1,61 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/media";
+@use "../../styles/partials/typography";
 @use "../../styles/partials/global";
+
+.login-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+
+	h1 {
+		@extend %mobile__page-header;
+		color: colors.$primary_color;
+		margin-bottom: 2rem;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		label {
+			margin-top: 0.5rem;
+			@extend %mobile__subheader;
+			color: colors.$primary_color;
+		}
+
+		input {
+			@extend %form-input;
+		}
+	}
+
+	.icon {
+		width: 10rem;
+		margin: 2rem auto;
+
+		&__image {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.create-account {
+	display: flex;
+	justify-self: flex-start;
+	@extend %mobile__subheader;
+	margin: 1rem 0 0 0;
+	color: colors.$dark_text;
+
+	&__link {
+		color: colors.$secondary_color;
+		cursor: pointer;
+
+		&:hover {
+			color: colors.$secondary_shade;
+			border-bottom: 1px solid colors.$secondary_shade;
+		}
+	}
+}
