@@ -1,0 +1,9 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/media";
+@use "../../styles/partials/typography";
+
+.calendar-container {
+	font-family: typography.$main_font;
+	color: colors.$dark_text;
+	padding-bottom: 4rem;
+}
