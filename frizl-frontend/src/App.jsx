@@ -9,9 +9,9 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import AccountPage from "./pages/AccountPage";
 import ResourcesPage from "./pages/ResourcesPage";
-import MyYearPage from "./pages/MyYearPage";
-import MyWeekPage from "./pages/MyWeekPage";
-import MyDayPage from "./pages/MyDayPage";
+import MyYearPage from "./pages/MyYear/MyYearPage";
+import MyWeekPage from "./pages/MyWeek/MyWeekPage";
+import MyDayPage from "./pages/MyDay/MyDayPage";
 import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {

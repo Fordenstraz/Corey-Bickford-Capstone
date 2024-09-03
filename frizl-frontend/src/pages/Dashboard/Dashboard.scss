@@ -9,4 +9,8 @@
 	@include media.tablet {
 		padding: 3rem 0 0;
 	}
+
+	&__outlet {
+		padding: 1.25rem;
+	}
 }

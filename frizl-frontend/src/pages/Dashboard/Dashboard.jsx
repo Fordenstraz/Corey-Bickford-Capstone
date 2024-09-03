@@ -12,8 +12,10 @@ export default function Dashboard() {
 			{/* Nav at bottom for mobile, top for large screens */}
 			<Navbar />
 
-			{/* Insert page content: */}
-			<Outlet />
+			<div className="dashboard__outlet">
+				{/* Insert page content: */}
+				<Outlet />
+			</div>
 
 			{/* Speed dial menu */}
 			<SpeedDialMenu />
