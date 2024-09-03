@@ -9,6 +9,11 @@
 	align-items: center;
 	padding: 2rem;
 
+	@include media.tablet {
+		max-width: 24rem;
+		margin: 0 auto;
+	}
+
 	h1 {
 		@extend %mobile__page-header;
 		color: colors.$primary_color;

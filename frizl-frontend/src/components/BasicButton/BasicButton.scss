@@ -20,13 +20,6 @@
 	color: colors.$light_text;
 	cursor: pointer;
 
-	@include media.tablet {
-		width: 10rem;
-		min-width: 10rem;
-		height: 2.5rem;
-		margin-top: 0;
-	}
-
 	&:hover {
 		background-color: colors.$primary_shade;
 	}
