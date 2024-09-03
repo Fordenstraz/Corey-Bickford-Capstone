@@ -7,9 +7,9 @@ import Calendar from "../../components/Calendar/Calendar";
 
 export default function MyDayPage() {
 	return (
-		<section>
+		<section className="day-wrapper">
 			<h1>MY DAY</h1>
-			<Calendar view={"dayGridDay"} />
+			<Calendar view={"listDay"} />
 		</section>
 	);
 }
