@@ -11,15 +11,9 @@
 	line-height: 2rem;
 }
 
-// %mobile__section-header {
-// 	@extend %mobile__page-header;
-// 	font-size: 0.75rem;
-// 	line-height: 1.25rem;
-// }
-
 %mobile__subheader {
 	@extend %mobile__page-header;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	font-weight: 500;
 	line-height: 1.125rem;
 }
