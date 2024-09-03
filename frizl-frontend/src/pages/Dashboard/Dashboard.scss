@@ -3,14 +3,16 @@
 @use "../../styles/partials/typography";
 
 .dashboard {
+	height: 100vh;
 	background-color: colors.$off-white;
-	padding: 0 0 3rem;
+	padding: 0 0 2.75rem;
 
 	@include media.tablet {
 		padding: 3rem 0 0;
 	}
 
 	&__outlet {
+		height: 100%;
 		padding: 1.25rem;
 	}
 }
