@@ -32,6 +32,16 @@ export default function Navbar() {
 				</Link>
 
 				<Link
+					to="/dashboard/my_month"
+					className={`menu-bar__nav-item ${
+						currentView("/dashboard/my_month")
+							? "menu-bar__nav-item--selected"
+							: ""
+					}`}>
+					My Month
+				</Link>
+
+				<Link
 					to="/dashboard/my_week"
 					className={`menu-bar__nav-item ${
 						currentView("/dashboard/my_week")
@@ -41,7 +51,8 @@ export default function Navbar() {
 					My Week
 				</Link>
 
-				<Link
+				{/* Hide 'MyDay' temporarily */}
+				{/* <Link
 					to="/dashboard/my_day"
 					className={`menu-bar__nav-item ${
 						currentView("/dashboard/my_day")
@@ -49,7 +60,7 @@ export default function Navbar() {
 							: ""
 					}`}>
 					My Day
-				</Link>
+				</Link> */}
 			</nav>
 		</div>
 	);
