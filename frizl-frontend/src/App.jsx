@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import AccountPage from "./pages/AccountPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import MyYearPage from "./pages/MyYear/MyYearPage";
+import MyMonthPage from "./pages/MyMonth/MyMonth";
 import MyWeekPage from "./pages/MyWeek/MyWeekPage";
 import MyDayPage from "./pages/MyDay/MyDayPage";
 import PageNotFound from "./pages/PageNotFound";
@@ -42,6 +43,11 @@ export default function App() {
 					<Route
 						path="my_year"
 						element={<MyYearPage />}
+					/>
+
+					<Route
+						path="my_month"
+						element={<MyMonthPage />}
 					/>
 
 					<Route
