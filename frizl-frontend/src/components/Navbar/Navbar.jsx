@@ -51,16 +51,15 @@ export default function Navbar() {
 					My Week
 				</Link>
 
-				{/* Hide 'MyDay' temporarily */}
-				{/* <Link
+				<Link
 					to="/dashboard/my_day"
-					className={`menu-bar__nav-item ${
+					className={`menu-bar__nav-item menu-bar__extra-nav-option ${
 						currentView("/dashboard/my_day")
 							? "menu-bar__nav-item--selected"
 							: ""
 					}`}>
 					My Day
-				</Link> */}
+				</Link>
 			</nav>
 		</div>
 	);

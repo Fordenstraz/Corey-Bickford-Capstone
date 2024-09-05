@@ -6,6 +6,8 @@ import listPlugin from "@fullcalendar/list";
 import interactionPlugin from "@fullcalendar/interaction";
 // Styling
 import "./Calendar.scss";
+// Functions
+import { useHolidays } from "./CalendarContainer";
 
 // View plugins:
 const plugins = [dayGridPlugin, listPlugin, interactionPlugin];
@@ -17,6 +19,9 @@ const events = [
 ];
 
 export default function Calendar({ view }) {
+	// Get upcoming holidays from context:
+	const holidays = useHolidays();
+
 	// Use state to toggle if weekends are displayed:
 	const [toggleWeekends, setToggleWeekends] = useState(true);
 
