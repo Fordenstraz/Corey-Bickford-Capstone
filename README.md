@@ -14,7 +14,7 @@
 2. Next, navigate to this project in whatever directory it has been installed:
      - Right-click onm the folder and select "Open with Code", next to the blue VSCode icon
      - Open a terminal window by pressing "CTRL + SHIFT + ` " all at once
-     - In the terminal navigate to the root folder of the project `CD parent_folder/projects/Corey-Bickford-Capstone`
+     - In the terminal navigate to the root folder of the project `cd parent_folder/projects/Corey-Bickford-Capstone`
   
 3. Then run `npm install` to install all project dependencies.
 
@@ -25,13 +25,13 @@
 ### Now you are ready to go take a peak at FRIZL:
 
 #### The App
-To run the app navigate to `CD /frizl-frontend`, then enter `npm start`.
+To run the app navigate to `cd /frizl-frontend`, then enter `npm start`.
 The app will now be hosted locally, on port '5173'.
 Open a web browser and go to [The locally hosted app](http://localhost:5173/ "FRIZL, hosted on port 5173").
 The login page does not require any credentials at the moment. Hitting the "Login" button will take you through to the dashboard.
 
 #### The Server
-To run the server navigate to `CD /frizl-server`, then enter `npm start`.
+To run the server navigate to `cd /frizl-server`, then enter `npm start`.
 A confirmation message will pop up in the terminal to alert you of a success, and tell you what port the server is running on. 
 You will now be able to test out any of the API calls! [You can use Postman for API testing](https://www.postman.com/downloads/ "Download Postman")
 (admittedly, there isn't much to explore here yet.)
